@@ -28,8 +28,9 @@ public class JsonUtils {
             JSONObject rootObject = new JSONObject(json);
             JSONObject nameObject = rootObject.getJSONObject(NAME);
             sandwich.setMainName(nameObject.getString(MAIN_NAME));
-            sandwich.setAlsoKnownAs(getJsonArrayAsList(nameObject.getJSONArray(ALSO_KNOWN_AS)));
             sandwich.setPlaceOfOrigin(rootObject.getString(PLACE_OF_ORIGIN));
+            sandwich.setAlsoKnownAs(getJsonArrayAsList(nameObject.getJSONArray(ALSO_KNOWN_AS)));
+
             sandwich.setDescription(rootObject.getString(DESCRIPTION));
             sandwich.setImage(rootObject.getString(IMAGE));
             sandwich.setIngredients(getJsonArrayAsList(rootObject.getJSONArray(INGREDIENTS)));

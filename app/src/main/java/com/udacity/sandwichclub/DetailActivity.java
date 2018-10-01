@@ -16,6 +16,7 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
     private TextView placeOfOrigin;
+    private TextView alsoKnownAs;
 
 
     @Override
@@ -24,6 +25,8 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         placeOfOrigin = findViewById(R.id.origin_tv);
+        alsoKnownAs = findViewById(R.id.also_known_tv);
+
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
 
@@ -65,6 +68,7 @@ public class DetailActivity extends AppCompatActivity {
 
         // the place of origin of the sandwich
         placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
+        //alsoKnownAs.setText((CharSequence) sandwich.getAlsoKnownAs());
 
     }
 }

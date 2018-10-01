@@ -36,6 +36,8 @@ public class JsonUtils {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        Log.i(String.valueOf(sandwich), "GET SANDWICH");
+        Log.i(String.valueOf(PLACE_OF_ORIGIN), "GET PLACE OF ORIGIN");
         return sandwich;
     }
 

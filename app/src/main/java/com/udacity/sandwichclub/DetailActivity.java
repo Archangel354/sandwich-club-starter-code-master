@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +19,7 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
     private TextView placeOfOrigin;
-    private ListView list;
+    private TextView alsoKnownAs;
 
 
     @Override
@@ -46,13 +45,16 @@ public class DetailActivity extends AppCompatActivity {
 
 
         placeOfOrigin = findViewById(R.id.origin_tv);
-        list = findViewById(android.R.id.list);
+        alsoKnownAs = findViewById(R.id.also_known_tv);
+
 
         List<String> alsoknownas = sandwich.getAlsoKnownAs();
-        String hopeThisWorks = alsoknownas.get(0);
-        int length = alsoknownas.size();
+        String alsoKnownAsString = "";
 
-
+        for (String s : alsoknownas)
+        {
+            alsoKnownAsString += s + "\t";
+        }
 
        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getListView().getContext(), android.R.layout.simple_list_item_1, (List<String>) sandwich);
 
@@ -82,7 +84,7 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
-        populateUI(sandwich);
+        populateUI(sandwich, alsoKnownAsString);
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .into(ingredientsIv);
@@ -95,11 +97,11 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
-    private void populateUI(Sandwich sandwich) {
+    private void populateUI(Sandwich sandwich, String alsoKnownAsString) {
 
         // the place of origin of the sandwich
         placeOfOrigin.setText(sandwich.getPlaceOfOrigin());
-        //alsoKnownAs.setText((CharSequence) sandwich.getAlsoKnownAs());
+        alsoKnownAs.setText(alsoKnownAsString);
 
     }
 }

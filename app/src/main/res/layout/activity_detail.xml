@@ -30,6 +30,7 @@
             android:id="@+id/origin_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 
@@ -45,10 +46,10 @@
             android:text="@string/detail_also_known_as_label"
             android:textStyle="bold" />
 
-        <ListView
-            android:id="@android:id/list"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/also_known_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
@@ -61,7 +62,7 @@
 
     <TextView
         android:id="@+id/ingredients_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
@@ -74,11 +75,6 @@
     <TextView
         android:id="@+id/description_tv"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/also_known_tv"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 </LinearLayout>

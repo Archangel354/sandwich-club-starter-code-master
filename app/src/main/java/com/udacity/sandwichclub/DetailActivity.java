@@ -91,7 +91,7 @@ public class DetailActivity extends AppCompatActivity {
 
         for (String s : list)
         {
-            resultString += s + "\t";
+            resultString += s + "," + "\t";
         }
         return resultString;
     }

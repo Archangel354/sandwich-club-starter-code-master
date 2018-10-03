@@ -93,6 +93,13 @@ public class DetailActivity extends AppCompatActivity {
         {
             resultString += s + "," + "\t";
         }
+
+        // Remove the last comma at the end of the super string
+        // Note: be sure that there is a string with a length greater than zero or
+        // you will get an out of bounds exception
+        if (resultString.length() > 0){
+            resultString = resultString.substring(0, resultString.length() - 2);
+        }
         return resultString;
     }
 }
